@@ -65,7 +65,7 @@ module.exports = function(grunt) {
     browserify: {
       dev: {
         options: {
-          transform: ['debowerify'],
+          transform: [ ['reactify', {harmony:true} ],'debowerify'],
           debug: true
         },
         src: ['<%= project.alljs %>'],
@@ -134,8 +134,8 @@ module.exports = function(grunt) {
         tasks: ['sass:dev']
       },
       express: {
-        files:  [ 'server.js' ],
-        tasks:  [ 'express:dev' ],
+        files:  [ 'server.js', 'app/index.html' ],
+        tasks:  [ 'build','express:dev' ],
         options: {
           spawn: false
         }

@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       app: ['app'],
       scss: ['<%= project.app %>/sass/style.scss'],
       css: ['<%= project.app %>/css/**/*.css'],
-      alljs: ['<%= project.app %>/js/**/*.js']
+      alljs: ['<%= project.app %>/js/**/*.jsx']
     },
 
     wiredep: {
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
           compass: false
         },
         files: {
-          'build/css/style.css':'<%= project.css %>'
+          'build/css/style.css':'<%= project.scss %>'
         }
       }
     },
